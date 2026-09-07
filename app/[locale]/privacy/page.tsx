@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('legal.privacy');
-  return { title: `${t('title')} — Gotovo` };
+  return { title: `${t('title')} — FRKA` };
 }
 
 export default async function PrivacyPage({ params }: Props) {

@@ -11,7 +11,7 @@ import {
 } from '@/lib/datetime';
 import { categoryDisplayName, cityDisplayName } from '@/lib/display';
 import { eventDurationDays, getCategoryColor, isNewEvent } from '@/lib/event-utils';
-import type { GotovoEvent } from '@/lib/types';
+import type { FRKAEvent } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { LanguageHint } from './language-hint';
 import { CancelledBanner, PostponedBanner } from './withdrawal-banner';
@@ -21,7 +21,7 @@ import { CancelledBanner, PostponedBanner } from './withdrawal-banner';
  * settings-list card (Date / Time / Location / Price), description and tags.
  * Shared by the intercepted modal route and the /event/[uid] full page.
  */
-export function EventDetailContent({ event, locale }: { event: GotovoEvent; locale: 'ru' | 'en' }) {
+export function EventDetailContent({ event, locale }: { event: FRKAEvent; locale: 'ru' | 'en' }) {
   const t = useTranslations('event');
   const tDay = useTranslations('relativeDay');
   const isNew = isNewEvent(event);

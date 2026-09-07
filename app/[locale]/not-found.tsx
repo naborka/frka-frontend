@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import { primaryButtonClass } from '@/components/gotovo/ui';
+import { primaryButtonClass } from '@/components/frka/ui';
 import { Link } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
 

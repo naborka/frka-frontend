@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'nodejs';
-export const alt = 'gotovo — events in Novi Sad and Belgrade';
+export const alt = 'frka — events in Novi Sad and Belgrade';
 export const size = { width: 1200, height: 630 } as const;
 export const contentType = 'image/png';
 
@@ -39,7 +39,7 @@ export default function SiteOpengraphImage() {
           letterSpacing: '-0.05em',
         }}
       >
-        gotovo
+        frka
       </div>
       <div style={{ fontSize: 32, color: '#a1a1aa' }}>discover what's on tonight</div>
     </div>,

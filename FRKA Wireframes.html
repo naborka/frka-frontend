@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gotovo — Feed Wireframes</title>
+<title>FRKA — Feed Wireframes</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -131,7 +131,7 @@ const Phone = ({children, label, annotation}) => (
 );
 
 // ── HEADER ─────────────────────────────────────────────────────────────────
-const AppHeader = ({title='Gotovo', right}) => (
+const AppHeader = ({title='FRKA', right}) => (
   <div style={{
     borderBottom:`1.5px solid ${LINE}`,
     padding:'8px 12px',
@@ -505,7 +505,7 @@ const WEEK_DAYS = [
 
 const DirC_Normal = () => (
   <Phone>
-    <AppHeader title="Gotovo — Apr 28" right={<T size={11} color={DIM}>○</T>}/>
+    <AppHeader title="FRKA — Apr 28" right={<T size={11} color={DIM}>○</T>}/>
     <WeekStrip days={WEEK_DAYS}/>
     <ChipRow chips={['All','Music','Food','Adventure']} colors={[DIM,VIOLET,AMBER,GREEN]} activeIndex={0}/>
     <div style={{overflowY:'hidden', maxHeight:480}}>
@@ -528,7 +528,7 @@ const DirC_Normal = () => (
 
 const DirC_Sparse = () => (
   <Phone>
-    <AppHeader title="Gotovo — Apr 28" right={<T size={11} color={DIM}>○</T>}/>
+    <AppHeader title="FRKA — Apr 28" right={<T size={11} color={DIM}>○</T>}/>
     <WeekStrip days={[
       {label:'M',count:1,active:true},
       {label:'T',count:0,active:false},
@@ -666,7 +666,7 @@ const WireframeLabel = ({letter, name, desc}) => (
 
 function App() {
   return (
-    <DCCanvas title="Gotovo — Feed Wireframes" background="#f0ede6">
+    <DCCanvas title="FRKA — Feed Wireframes" background="#f0ede6">
 
       <DCSection id="dir-a" title="A — Editorial List">
         <DCArtboard id="a1" label="Normal feed" width={320} height={590}>

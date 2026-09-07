@@ -1,4 +1,4 @@
-import { FeedSkeleton } from '@/components/gotovo/feed-skeleton';
+import { FeedSkeleton } from '@/components/frka/feed-skeleton';
 
 export default function Loading() {
   return (

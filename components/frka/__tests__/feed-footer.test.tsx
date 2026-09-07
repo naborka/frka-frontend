@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { describe, expect, it, vi } from 'vitest';
-import { FeedFooter } from '@/components/gotovo/feed-footer';
+import { FeedFooter } from '@/components/frka/feed-footer';
 import messages from '../../../messages/ru.json';
 
 const renderFooter = (props: Partial<Parameters<typeof FeedFooter>[0]> = {}) =>

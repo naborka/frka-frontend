@@ -44,7 +44,7 @@ let revalidateTagMock: ReturnType<typeof vi.fn>;
 
 beforeAll(async () => {
   process.env.REVALIDATE_SECRET = SECRET;
-  process.env.NEXT_PUBLIC_API_BASE_URL = 'https://api.gotovo.app/v1';
+  process.env.NEXT_PUBLIC_API_BASE_URL = 'https://api.frka.top/v1';
   process.env.NEXT_PUBLIC_SEARCH_ENABLED = 'false';
   ({ POST } = await import('../route'));
   const cache = await import('next/cache');

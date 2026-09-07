@@ -1,5 +1,5 @@
 import { isoDateKey } from './event-utils';
-import type { GotovoEvent } from './types';
+import type { FRKAEvent } from './types';
 
 /**
  * ICS (RFC 5545) export + map-link helpers for the event detail actions.
@@ -59,13 +59,13 @@ const localDatePlusDays = (iso: string, days: number): string => {
  * All-day events use VALUE=DATE with the RFC's exclusive DTEND; timed events
  * are exported in UTC (startsAt carries the Belgrade offset).
  */
-export const buildIcs = (event: GotovoEvent, now: Date | number = Date.now()): string => {
+export const buildIcs = (event: FRKAEvent, now: Date | number = Date.now()): string => {
   const lines: string[] = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
-    'PRODID:-//Gotovo//Event Feed//EN',
+    'PRODID:-//FRKA//Event Feed//EN',
     'BEGIN:VEVENT',
-    `UID:${escapeText(event.uid)}@gotovo.app`,
+    `UID:${escapeText(event.uid)}@frka.top`,
     `DTSTAMP:${utcStamp(new Date(now))}`,
   ];
 
@@ -88,7 +88,7 @@ export const buildIcs = (event: GotovoEvent, now: Date | number = Date.now()): s
 };
 
 /** `sunrise-hike.ics` — ASCII slug of the title, uid fallback. */
-export const icsFilename = (event: GotovoEvent): string => {
+export const icsFilename = (event: FRKAEvent): string => {
   const slug = event.title
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')

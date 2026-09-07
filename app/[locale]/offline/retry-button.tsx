@@ -1,6 +1,6 @@
 'use client';
 
-import { primaryButtonClass } from '@/components/gotovo/ui';
+import { primaryButtonClass } from '@/components/frka/ui';
 import { cn } from '@/lib/utils';
 
 export function RetryButton({ label }: { label: string }) {

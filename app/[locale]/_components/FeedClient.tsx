@@ -2,8 +2,8 @@
 
 import { parseAsArrayOf, parseAsString, parseAsStringEnum, useQueryState } from 'nuqs';
 import { useCallback, useMemo } from 'react';
-import { Feed, FeedFooter, FilterZone, Header, QuickJump, TabBar } from '@/components/gotovo';
-import { Footer } from '@/components/gotovo/footer';
+import { Feed, FeedFooter, FilterZone, Header, QuickJump, TabBar } from '@/components/frka';
+import { Footer } from '@/components/frka/footer';
 import { useEventPagination } from '@/hooks/use-event-pagination';
 import type { ListEventsParams } from '@/lib/api/client';
 import type { EventsPage } from '@/lib/api/schemas';

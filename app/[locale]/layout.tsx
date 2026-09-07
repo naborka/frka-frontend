@@ -7,7 +7,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import type { ReactNode } from 'react';
-import { UpdateToast } from '@/components/gotovo/update-toast';
+import { UpdateToast } from '@/components/frka/update-toast';
 import { ThemeProvider } from '@/components/theme-provider';
 import { type Locale, routing } from '@/i18n/routing';
 import '../globals.css';
@@ -22,16 +22,16 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  applicationName: 'gotovo',
-  title: 'Gotovo - Event Discovery',
+  applicationName: 'frka',
+  title: 'FRKA - Event Discovery',
   description: 'Discover events in Novi Sad and Belgrade. Music, art, food, adventure, and more.',
   generator: 'v0.app',
   keywords: ['events', 'Novi Sad', 'Belgrade', 'Serbia', 'music', 'art', 'food'],
-  authors: [{ name: 'Gotovo' }],
+  authors: [{ name: 'FRKA' }],
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'gotovo',
+    title: 'frka',
   },
   formatDetection: { telephone: false },
   icons: {
@@ -69,7 +69,7 @@ export function generateStaticParams() {
 const themeScript = `
 (function() {
   try {
-    var cookie = document.cookie.match('(^|;)\\\\s*gotovo-theme\\\\s*=\\\\s*([^;]+)');
+    var cookie = document.cookie.match('(^|;)\\\\s*frka-theme\\\\s*=\\\\s*([^;]+)');
     var theme = cookie ? cookie.pop() : null;
     if (theme === 'dark' || theme === 'light') {
       document.documentElement.className = document.documentElement.className.replace(/(^|\\\\s)dark(\\\\s|$)/, '$1').trim();

@@ -1,4 +1,4 @@
-# Gotovo Frontend — Technology Stack Analysis
+# FRKA Frontend — Technology Stack Analysis
 
 > Backend exists. Vercel is the deployment target. This document focuses **exclusively** on the frontend, audits what the current design implies, and recommends a stack that matches the product — not a generic "Next.js best practices" listicle.
 
@@ -14,7 +14,7 @@ Reading the prototype critically:
 | Filter state in `useState` only | No deep links, no shareable filtered views, no back-button restoration |
 | `DetailPage` is a sibling modal, not a route | Event URLs can't be shared — fatal for an event-discovery product |
 | `REFERENCE_TIME` is a hardcoded constant | "New" badge will lie the moment this ships |
-| `localStorage.setItem('gotovo-theme', …)` runs unguarded | Will throw during SSR; needs cookie or Next.js theme primitive |
+| `localStorage.setItem('frka-theme', …)` runs unguarded | Will throw during SSR; needs cookie or Next.js theme primitive |
 | `document.body.classList.toggle('dark')` in effect | Causes hydration flash on first paint |
 | No images, no `<picture>`, no `next/image` usage | Layout will fail the moment events have hero images |
 | Russian Cyrillic content (e.g. `Белград`, `Нови-Сад`) is the production reality (~99% of ingest); mock data is in Latin / English only | i18n / locale-aware sort and format is real, not theoretical. Primary content language is `ru` (Decision 0005) |
@@ -82,7 +82,7 @@ Reading the prototype critically:
 
 ### PWA
 
-- **`@serwist/next`** (not the abandoned `next-pwa`). Manifest + icons + a minimal service worker for offline shell. Gotovo lives on phones; an install prompt is the cheapest retention feature available.
+- **`@serwist/next`** (not the abandoned `next-pwa`). Manifest + icons + a minimal service worker for offline shell. FRKA lives on phones; an install prompt is the cheapest retention feature available.
 
 ### Analytics & errors
 

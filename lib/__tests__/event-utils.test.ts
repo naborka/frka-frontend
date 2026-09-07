@@ -6,9 +6,9 @@ import {
   groupEventsByRecency,
   isNewEvent,
 } from '@/lib/event-utils';
-import type { EventCategory, GotovoEvent } from '@/lib/types';
+import type { EventCategory, FRKAEvent } from '@/lib/types';
 
-const makeEvent = (overrides: Partial<GotovoEvent> = {}): GotovoEvent => ({
+const makeEvent = (overrides: Partial<FRKAEvent> = {}): FRKAEvent => ({
   uid: 'evt_1',
   title: 'Untitled',
   description: null,

@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { describe, expect, it, vi } from 'vitest';
-import { Header } from '@/components/gotovo/header';
+import { Header } from '@/components/frka/header';
 import { ThemeProvider } from '@/components/theme-provider';
 import en from '../../../messages/en.json';
 
@@ -17,7 +17,7 @@ const renderHeader = (activeFilterCount = 0, onClearFilters = () => {}) =>
 describe('Header', () => {
   it('renders the plain-text wordmark', () => {
     const { container } = renderHeader();
-    expect(screen.getByText('Gotovo')).toBeInTheDocument();
+    expect(screen.getByText('FRKA')).toBeInTheDocument();
     // No logo mark / orbit SVG next to the wordmark.
     expect(container.querySelector('header > svg')).toBeNull();
   });

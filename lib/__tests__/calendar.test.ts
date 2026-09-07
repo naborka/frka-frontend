@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { buildIcs, icsFilename, mapsUrl } from '@/lib/calendar';
-import type { GotovoEvent } from '@/lib/types';
+import type { FRKAEvent } from '@/lib/types';
 
-const makeEvent = (overrides: Partial<GotovoEvent> = {}): GotovoEvent => ({
+const makeEvent = (overrides: Partial<FRKAEvent> = {}): FRKAEvent => ({
   uid: 'evt_1',
   title: 'Sunrise hike',
   description: 'Easy loop; bring water',
@@ -30,7 +30,7 @@ describe('buildIcs', () => {
     const ics = buildIcs(makeEvent(), NOW);
     expect(ics).toContain('BEGIN:VCALENDAR');
     expect(ics).toContain('BEGIN:VEVENT');
-    expect(ics).toContain('UID:evt_1@gotovo.app');
+    expect(ics).toContain('UID:evt_1@frka.top');
     expect(ics).toContain('DTSTAMP:20260720T100000Z');
     // 07:30+02:00 → 05:30Z
     expect(ics).toContain('DTSTART:20260725T053000Z');

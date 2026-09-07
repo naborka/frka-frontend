@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'gotovo',
-    short_name: 'gotovo',
+    name: 'frka',
+    short_name: 'frka',
     description: 'События в Нови-Саде и Белграде',
     start_url: '/',
     display: 'standalone',

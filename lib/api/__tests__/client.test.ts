@@ -14,7 +14,7 @@ import eventDetailFixture from './fixtures/event-detail.json';
 import facetsFixture from './fixtures/facets.json';
 import healthFixture from './fixtures/health.json';
 
-const BASE = 'https://api.gotovo.app/v1';
+const BASE = 'https://api.frka.top/v1';
 
 const server = setupServer();
 

@@ -27,7 +27,7 @@ export function Header({ activeFilterCount, onClearFilters }: HeaderProps) {
 
   return (
     <header className="h-14 pl-4 pr-2 flex items-center bg-background border-b border-divider flex-shrink-0 md:pl-6 md:pr-4">
-      <span className="text-[19px] font-extrabold tracking-tight text-foreground">Gotovo</span>
+      <span className="text-[19px] font-extrabold tracking-tight text-foreground">FRKA</span>
 
       <div className="ml-auto flex items-center">
         {activeFilterCount > 0 && (

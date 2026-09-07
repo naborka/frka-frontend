@@ -1,9 +1,9 @@
-# gotovo-frontend — moved
+# frka-frontend — moved
 
 This repository is **archived and read-only**. Development continues in the
 monorepo:
 
-## → https://github.com/naborka/gotovo
+## → https://github.com/naborka/frka
 
 The Next.js application now lives at **`apps/web/`** there, alongside the Rust
 API (`apps/api/`) and the admin console (`apps/admin/`).

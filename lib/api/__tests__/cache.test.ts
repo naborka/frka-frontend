@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { getEvent, getEvents } from '@/lib/api/client';
 import { tagEventDetail, tagEventList, tagFacets } from '@/lib/api/tags';
 
-const BASE = 'https://api.gotovo.app/v1';
+const BASE = 'https://api.frka.top/v1';
 
 beforeEach(() => {
   process.env.NEXT_PUBLIC_API_BASE_URL = BASE;

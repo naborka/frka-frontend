@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect } from 'react';
 
-const KEY = 'gotovo.feedScrollY';
+const KEY = 'frka.feedScrollY';
 
 /**
  * The feed scrolls inside a dedicated container (fixed chrome above it), not

@@ -2,11 +2,11 @@
 
 import { useTranslations } from 'next-intl';
 import { useCallback, useEffect } from 'react';
-import { DetailActions } from '@/components/gotovo/detail-actions';
-import { DetailHeader } from '@/components/gotovo/detail-header';
-import { EventDetailContent } from '@/components/gotovo/event-detail-content';
+import { DetailActions } from '@/components/frka/detail-actions';
+import { DetailHeader } from '@/components/frka/detail-header';
+import { EventDetailContent } from '@/components/frka/event-detail-content';
 import { useRouter } from '@/i18n/routing';
-import type { GotovoEventDetail } from '@/lib/types';
+import type { FRKAEventDetail } from '@/lib/types';
 
 /**
  * Intercepted-route detail: full page under 640px, centered modal above.
@@ -16,7 +16,7 @@ export function EventDetailModal({
   event,
   locale,
 }: {
-  event: GotovoEventDetail;
+  event: FRKAEventDetail;
   locale: 'ru' | 'en';
 }) {
   const t = useTranslations('event');

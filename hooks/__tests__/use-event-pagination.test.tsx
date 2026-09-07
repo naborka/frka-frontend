@@ -5,7 +5,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } 
 import { useEventPagination } from '@/hooks/use-event-pagination';
 import type { Event, EventsPage } from '@/lib/api/schemas';
 
-const BASE = 'https://api.gotovo.app/v1';
+const BASE = 'https://api.frka.top/v1';
 const server = setupServer();
 
 let ioCallbacks: ((entries: { isIntersecting: boolean }[]) => void)[] = [];

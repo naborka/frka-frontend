@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { EventRow } from '@/components/gotovo/event-row';
-import type { GotovoEvent } from '@/lib/types';
+import { EventRow } from '@/components/frka/event-row';
+import type { FRKAEvent } from '@/lib/types';
 import messages from '../../../messages/en.json';
 
-const makeEvent = (overrides: Partial<GotovoEvent> = {}): GotovoEvent => ({
+const makeEvent = (overrides: Partial<FRKAEvent> = {}): FRKAEvent => ({
   uid: 'evt_1',
   title: 'Test event',
   description: null,
@@ -26,7 +26,7 @@ const makeEvent = (overrides: Partial<GotovoEvent> = {}): GotovoEvent => ({
   ...overrides,
 });
 
-const renderRow = (event: GotovoEvent) =>
+const renderRow = (event: FRKAEvent) =>
   render(
     <NextIntlClientProvider locale="en" messages={messages}>
       <EventRow event={event} locale="en" />

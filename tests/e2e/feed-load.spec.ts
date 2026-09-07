@@ -3,7 +3,7 @@ import { openFeed } from './helpers';
 
 test('feed loads with mocked events', async ({ page }) => {
   await page.goto('/');
-  await expect(page).toHaveTitle(/Gotovo/i);
+  await expect(page).toHaveTitle(/FRKA/i);
   await expect(page.getByRole('link', { name: 'Mock Hike at Fruška Gora' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Mock Jazz Night' })).toBeVisible();
 });

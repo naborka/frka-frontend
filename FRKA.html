@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gotovo — Event Discovery</title>
+  <title>FRKA — Event Discovery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
@@ -406,7 +406,7 @@ const Header = ({ hasFilters, onClearFilters, theme, onToggleTheme }) => (
         fontFamily: 'var(--font-heading)', fontSize: 18, fontWeight: 800,
         color: 'var(--foreground)', letterSpacing: '-0.02em',
       }}>
-        Gotovo
+        FRKA
       </span>
     </div>
     <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -1008,13 +1008,13 @@ const DetailPage = ({ event, onClose }) => {
 const App = () => {
   /* ── Theme ── */
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('gotovo-theme');
+    const saved = localStorage.getItem('frka-theme');
     return saved === 'light' ? 'light' : 'dark';
   });
 
   useEffect(() => {
     document.body.classList.toggle('dark', theme === 'dark');
-    localStorage.setItem('gotovo-theme', theme);
+    localStorage.setItem('frka-theme', theme);
   }, [theme]);
 
   const toggleTheme = useCallback(() => setTheme(t => t === 'dark' ? 'light' : 'dark'), []);

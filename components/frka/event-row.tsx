@@ -5,12 +5,12 @@ import { Link } from '@/i18n/routing';
 import { formatTime } from '@/lib/datetime';
 import { categoryDisplayName, cityDisplayName } from '@/lib/display';
 import { eventDurationDays, getCategoryColor, isNewEvent } from '@/lib/event-utils';
-import type { GotovoEvent } from '@/lib/types';
+import type { FRKAEvent } from '@/lib/types';
 import { useScrollSnapshot } from '@/lib/use-scroll-snapshot';
 import { cn } from '@/lib/utils';
 
 interface EventRowProps {
-  event: GotovoEvent;
+  event: FRKAEvent;
   locale?: 'ru' | 'en';
 }
 

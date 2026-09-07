@@ -1,16 +1,16 @@
 import { useTranslations } from 'next-intl';
-import { DetailActions } from '@/components/gotovo/detail-actions';
-import { DetailHeader } from '@/components/gotovo/detail-header';
-import { EventDetailContent } from '@/components/gotovo/event-detail-content';
-import { Footer } from '@/components/gotovo/footer';
-import type { GotovoEventDetail } from '@/lib/types';
+import { DetailActions } from '@/components/frka/detail-actions';
+import { DetailHeader } from '@/components/frka/detail-header';
+import { EventDetailContent } from '@/components/frka/event-detail-content';
+import { Footer } from '@/components/frka/footer';
+import type { FRKAEventDetail } from '@/lib/types';
 
 /** Direct-URL event detail: full page with the same chrome as the modal. */
 export function EventDetailFullPage({
   event,
   locale,
 }: {
-  event: GotovoEventDetail;
+  event: FRKAEventDetail;
   locale: 'ru' | 'en';
 }) {
   const t = useTranslations('event');

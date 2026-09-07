@@ -1,4 +1,4 @@
-# Gotovo — Backend API Contract (v1.2)
+# FRKA — Backend API Contract (v1.2)
 
 > Authoritative contract between the **Next.js frontend** (Vercel) and the **existing backend**. Every endpoint listed here is derived from a concrete need in the frontend — nothing speculative. Anything not listed is out of scope for v1.
 
@@ -51,7 +51,7 @@ This document was reviewed and refined. Material changes:
 
 ### Transport
 
-- **Base URL**: `https://api.gotovo.app/v1` (placeholder — backend confirms)
+- **Base URL**: `https://api.frka.top/v1` (placeholder — backend confirms)
 - **Protocol**: HTTPS only. HTTP returns `426 Upgrade Required`.
 - **Versioning**: URL-based (`/v1/...`). Breaking changes → `/v2`. `/v1` is **never broken in place**.
 
@@ -97,7 +97,7 @@ Every non-2xx response uses this shape, with `Content-Type: application/problem+
 
 ```json
 {
-  "type":      "https://api.gotovo.app/problems/event-not-found",
+  "type":      "https://api.frka.top/problems/event-not-found",
   "title":     "Event not found",
   "status":    404,
   "detail":    "No event with uid 'abc123'.",
@@ -230,7 +230,7 @@ The feed. Single most-called endpoint. Everything else is decoration.
 | `from` | `YYYY-MM-DD` | today (server-local) | Earliest `startsAt` date inclusive |
 | `to` | `YYYY-MM-DD` | `from` + 30 days | Latest `startsAt` date **inclusive**. Range `to - from` ≤ **92 days**; greater → `400`. |
 | `sort` | `timeline` \| `recent` | `timeline` | `timeline` = by `startsAt` asc; `recent` = by `createdAt` desc |
-| `q` | string (1–80 chars) | — | Full-text search on title + description. **v1: always returns `501 Not Implemented`** with `Sunset: Tue, 01 Sep 2026 00:00:00 GMT` and `Link: <https://api.gotovo.app/v1/changelog>; rel="alternate"`. Activation tracked under Decision 0006. |
+| `q` | string (1–80 chars) | — | Full-text search on title + description. **v1: always returns `501 Not Implemented`** with `Sunset: Tue, 01 Sep 2026 00:00:00 GMT` and `Link: <https://api.frka.top/v1/changelog>; rel="alternate"`. Activation tracked under Decision 0006. |
 | `cursor` | string | — | Pagination cursor from previous response |
 | `limit` | integer 1–100 | 20 | Page size |
 
@@ -364,7 +364,7 @@ All feed fields **plus** a `details` object:
     },
     "images": [
       {
-        "url":      "https://cdn.gotovo.app/evt_01HXYZABCDE/hero.webp",
+        "url":      "https://cdn.frka.top/evt_01HXYZABCDE/hero.webp",
         "width":    1600,
         "height":   900,
         "blurhash": "LKO2?V%2Tw=w]~RBVZRi};RPxuwH",
@@ -465,10 +465,10 @@ When new events land, the backend calls a Next.js route handler on Vercel to pur
 ### Request
 
 ```
-POST https://gotovo.app/api/revalidate
+POST https://frka.top/api/revalidate
 Content-Type:           application/json
-X-Gotovo-Timestamp:     1745928000          # unix seconds, must be within 5 min of server clock
-X-Gotovo-Signature:     sha256=<hex>        # HMAC-SHA256 over `${timestamp}.${rawBody}` with REVALIDATE_SECRET
+X-FRKA-Timestamp:     1745928000          # unix seconds, must be within 5 min of server clock
+X-FRKA-Signature:     sha256=<hex>        # HMAC-SHA256 over `${timestamp}.${rawBody}` with REVALIDATE_SECRET
 X-Request-ID:           <uuid>
 
 {
@@ -480,8 +480,8 @@ X-Request-ID:           <uuid>
 ### Constraints
 
 - `paths.length + tags.length` ≤ **100** per request; greater → `400`.
-- `X-Gotovo-Timestamp` skew > 300 s → `401` (replay defense).
-- Missing or invalid `X-Gotovo-Signature` → `401`.
+- `X-FRKA-Timestamp` skew > 300 s → `401` (replay defense).
+- Missing or invalid `X-FRKA-Signature` → `401`.
 - Constant-time signature comparison server-side (no early-exit on first byte mismatch).
 - Idempotent: replaying the same body within the freshness window is a no-op and still returns `200`.
 
@@ -618,7 +618,7 @@ If a response fails this schema in production, the frontend logs to Sentry and r
 Backend repo at `openapi.yaml`. Frontend generates types via:
 
 ```bash
-npx openapi-typescript https://api.gotovo.app/v1/openapi.yaml -o src/lib/api/types.gen.ts
+npx openapi-typescript https://api.frka.top/v1/openapi.yaml -o src/lib/api/types.gen.ts
 ```
 
 CI on frontend: regenerate, diff, fail PR if drift is unintended. Hand-written `interface Event { … }` is forbidden.
@@ -734,7 +734,7 @@ Wire form is the English key (`Outdoor`, `Free`, …). Display per active UI loc
 | `ENTERTAINMENT`  | Развлечения             | Entertainment   |
 | `IT_NETWORKING`  | IT и нетворкинг         | IT/Networking   |
 
-Wire form is the enum value (`HIKING`, …). Backend's existing English display-name map in `gotovo-backend/shared/src/main/kotlin/space/cloaq/shared/constant/EventCategory.kt` is authoritative for the English column. Russian display values are first-pass drafts subject to native-speaker review; if a reviewer is unavailable at merge time, ship with English-only fallback for any row whose Russian translation has not been confirmed.
+Wire form is the enum value (`HIKING`, …). Backend's existing English display-name map in `frka-backend/shared/src/main/kotlin/space/cloaq/shared/constant/EventCategory.kt` is authoritative for the English column. Russian display values are first-pass drafts subject to native-speaker review; if a reviewer is unavailable at merge time, ship with English-only fallback for any row whose Russian translation has not been confirmed.
 
 ---
 

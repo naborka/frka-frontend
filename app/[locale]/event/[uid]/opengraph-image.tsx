@@ -3,7 +3,7 @@ import { getEvent } from '@/lib/api/client';
 import { categoryDisplayName } from '@/lib/display';
 
 export const runtime = 'nodejs';
-export const alt = 'gotovo event';
+export const alt = 'frka event';
 export const size = { width: 1200, height: 630 } as const;
 export const contentType = 'image/png';
 
@@ -31,7 +31,7 @@ export default async function OpengraphImage({ params }: { params: Promise<Param
           letterSpacing: '-0.04em',
         }}
       >
-        gotovo
+        frka
       </div>,
       size,
     );
@@ -89,7 +89,7 @@ export default async function OpengraphImage({ params }: { params: Promise<Param
         }}
       >
         <span>{dateLabel}</span>
-        <span style={{ color: '#fff', fontWeight: 700 }}>gotovo.app</span>
+        <span style={{ color: '#fff', fontWeight: 700 }}>frka.top</span>
       </div>
     </div>,
     size,

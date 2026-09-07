@@ -1,6 +1,6 @@
-# Gotovo — Project Specification & Implementation Plan
+# FRKA — Project Specification & Implementation Plan
 
-> Comprehensive review, specification, and execution plan for the Gotovo event-discovery web app.
+> Comprehensive review, specification, and execution plan for the FRKA event-discovery web app.
 > Audience: lead engineer, design lead, project owner.
 > Status: draft v1.0 — supersedes nothing, complements `FRONTEND_STACK_ANALYSIS.md` and `BACKEND_API_CONTRACT.md`.
 
@@ -24,7 +24,7 @@
 
 | Asset | Status | Notes |
 | --- | --- | --- |
-| `Gotovo.html` (this project's prototype) | ✅ Visual reference complete | Single-file React+Babel demo; not production code |
+| `FRKA.html` (this project's prototype) | ✅ Visual reference complete | Single-file React+Babel demo; not production code |
 | `FRONTEND_STACK_ANALYSIS.md` | ✅ Reviewed, current | Stack recommendations |
 | `BACKEND_API_CONTRACT.md` v1.1 | ✅ Reviewed, current | Five public endpoints + revalidate webhook |
 | Next.js codebase (`uploads/b_L9NGMYx2uNe/`) | ⚠️ Scaffold only — needs productionization | Next 16.2.4, React 19.2.4, Tailwind v4, fonts wired, Radix installed |
@@ -32,7 +32,7 @@
 | Mock data (`lib/data.ts`) | ⚠️ Hardcoded, must be replaced with fetcher | 12 events authored against the v1.0 contract; mock fixtures need refresh against the 9-category vocabulary, 14-tag controlled list, 5-city slug set (Decisions 0001, 0002, 0003) |
 | Pure utilities (`lib/event-utils.ts`) | ✅ Production-quality, testable | `filterEvents`, `groupEventsByDate`, `getCategoryStyle`, etc. |
 | `app/page.tsx` | ⚠️ Fully client-side; no SSR data fetching | All state in `useState` |
-| `components/gotovo/*.tsx` | ✅ Atomic, SOLID-compliant | Header, TabBar, FilterZone, Feed, EventCard, DetailPage, Chip, Pill, EmptyState |
+| `components/frka/*.tsx` | ✅ Atomic, SOLID-compliant | Header, TabBar, FilterZone, Feed, EventCard, DetailPage, Chip, Pill, EmptyState |
 | `components/icons.tsx` | ✅ Hand-rolled, consistent | Should migrate to `lucide-react` for tree-shaking |
 | Theme handling | ⚠️ `useState` + `useEffect` + `document.documentElement` | `next-themes` is installed but unused |
 
@@ -87,7 +87,7 @@ The prototype demonstrated the visual direction is right. Don't redesign; produc
 
 ### 2.1 Product summary
 
-Gotovo is a **read-only event discovery web app** for Novi Sad and Belgrade. It aggregates events from multiple sources, deduplicates them, and presents a filtered, browsable feed. Users can:
+FRKA is a **read-only event discovery web app** for Novi Sad and Belgrade. It aggregates events from multiple sources, deduplicates them, and presents a filtered, browsable feed. Users can:
 
 - Browse a chronological "Timeline" or "Recently Added" feed.
 - Filter by category, city, and tags.
@@ -312,7 +312,7 @@ Six phases, each ~1 week of focused work, each independently shippable. **Phase 
 | 0.5.7 `/api/revalidate` notifier on backend | After `EventPersistenceService` upsert + `DedupSplitService` merge, POST to the frontend's `/api/revalidate` with HMAC + replay timestamp. | Manual ingestion → frontend cache purges within 2 s. |
 | 0.5.8 Publish OpenAPI | Micronaut OpenAPI processor (annotation-driven) emits `openapi.yaml` at build; serve at `/v1/openapi.yaml`. | Frontend can run `openapi-typescript` against staging URL. |
 
-**Exit criteria**: `curl https://api.gotovo.app/v1/events?limit=2` returns valid contract-shaped JSON; cursor round-trips; HMAC-revalidate purges frontend ISR.
+**Exit criteria**: `curl https://api.frka.top/v1/events?limit=2` returns valid contract-shaped JSON; cursor round-trips; HMAC-revalidate purges frontend ISR.
 
 ---
 
@@ -478,7 +478,7 @@ The project is "v1 launchable" when:
 Target structure after Phase 6:
 
 ```
-gotovo/
+frka/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml                       # typecheck, lint, test, build, bundle-size

@@ -10,7 +10,7 @@ import type {
 } from './schemas';
 
 /**
- * Typed fetcher for the Gotovo /v1/* API.
+ * Typed fetcher for the FRKA /v1/* API.
  *
  * Every call:
  *   1. Builds the URL (base from clientEnv + path + querystring).

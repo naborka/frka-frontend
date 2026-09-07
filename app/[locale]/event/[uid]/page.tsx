@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const description = event.description?.slice(0, 200);
     const ogImage = `${url}/opengraph-image`;
     return {
-      title: `${event.title} — Gotovo`,
+      title: `${event.title} — FRKA`,
       description,
       alternates: {
         canonical: url,
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description,
         images: [{ url: ogImage, width: 1200, height: 630 }],
         locale: locale === 'ru' ? 'ru_RU' : 'en_US',
-        siteName: 'gotovo',
+        siteName: 'frka',
       },
       twitter: {
         card: 'summary_large_image',
@@ -64,8 +64,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   } catch {
     return {
-      title: 'Event — Gotovo',
-      description: 'View event details, dates, location, and more on Gotovo.',
+      title: 'Event — FRKA',
+      description: 'View event details, dates, location, and more on FRKA.',
     };
   }
 }

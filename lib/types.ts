@@ -8,8 +8,8 @@
 export type {
   Category as EventCategory,
   City,
-  Event as GotovoEvent,
-  EventDetail as GotovoEventDetail,
+  Event as FRKAEvent,
+  EventDetail as FRKAEventDetail,
   EventStatus,
   EventsPage,
   Facets,

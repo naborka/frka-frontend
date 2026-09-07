@@ -7,7 +7,7 @@ import {
 } from 'next-themes';
 import { useEffect } from 'react';
 
-const THEME_COOKIE = 'gotovo-theme';
+const THEME_COOKIE = 'frka-theme';
 
 function ThemeCookieSync() {
   const { theme, resolvedTheme } = useTheme();

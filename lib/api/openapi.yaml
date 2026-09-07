@@ -1,19 +1,19 @@
 openapi: 3.0.1
 info:
-  title: Gotovo Public API
+  title: FRKA Public API
   description: "Event discovery API for Novi Sad and Belgrade. Contract: BACKEND_API_CONTRACT.md\
     \ v1.2."
   contact:
-    name: Gotovo
-    url: https://gotovo.app
+    name: FRKA
+    url: https://frka.top
   license:
     name: TBD
-    url: https://gotovo.app/license
+    url: https://frka.top/license
   version: 1.0.0
 servers:
-- url: https://api.gotovo.app
+- url: https://api.frka.top
   description: Production
-- url: https://staging-api.gotovo.app
+- url: https://staging-api.frka.top
   description: Staging
 - url: http://localhost:8080
   description: Local

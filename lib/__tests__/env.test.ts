@@ -45,7 +45,7 @@ describe('parseClientEnv', () => {
 
   it('defaults site URL and rejects an invalid one', () => {
     const base = { NEXT_PUBLIC_API_BASE_URL: 'https://api.example.com/v1' };
-    expect(parseClientEnv(base).NEXT_PUBLIC_SITE_URL).toBe('https://gotovo.app');
+    expect(parseClientEnv(base).NEXT_PUBLIC_SITE_URL).toBe('https://frka.top');
     expect(() => parseClientEnv({ ...base, NEXT_PUBLIC_SITE_URL: 'nope' })).toThrow(
       /NEXT_PUBLIC_SITE_URL/,
     );

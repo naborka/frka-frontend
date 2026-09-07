@@ -15,7 +15,7 @@ export interface ServerEnv {
 }
 
 export interface ClientEnv {
-  /** Base URL for the Gotovo backend /v1/* API. Example: https://api.gotovo.app/v1 */
+  /** Base URL for the FRKA backend /v1/* API. Example: https://api.frka.top/v1 */
   NEXT_PUBLIC_API_BASE_URL: string;
   /** Feature flag for the q= full-text search input (Decision 0006). */
   NEXT_PUBLIC_SEARCH_ENABLED: boolean;
@@ -74,7 +74,7 @@ export const parseClientEnv = (source: Source): ClientEnv => {
     issues.push(`NEXT_PUBLIC_SEARCH_ENABLED: expected 'true' or 'false', got '${searchFlag}'`);
   }
 
-  const siteUrl = source.NEXT_PUBLIC_SITE_URL ?? 'https://gotovo.app';
+  const siteUrl = source.NEXT_PUBLIC_SITE_URL ?? 'https://frka.top';
   if (!isUrl(siteUrl)) {
     issues.push(`NEXT_PUBLIC_SITE_URL: expected a valid URL, got '${siteUrl}'`);
   }

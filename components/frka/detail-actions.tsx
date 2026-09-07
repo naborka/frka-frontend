@@ -3,7 +3,7 @@
 import { useTranslations } from 'next-intl';
 import { IconCalendarPlus, IconExternal, IconShare } from '@/components/icons';
 import { buildIcs, icsFilename } from '@/lib/calendar';
-import type { GotovoEvent } from '@/lib/types';
+import type { FRKAEvent } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { ghostButtonClass, primaryButtonClass, secondaryButtonClass } from './ui';
 
@@ -11,7 +11,7 @@ import { ghostButtonClass, primaryButtonClass, secondaryButtonClass } from './ui
  * Detail footer: secondary "Add to calendar" (ICS download) and primary
  * "Open source" — the only two actions in the redesign.
  */
-export function DetailActions({ event }: { event: GotovoEvent }) {
+export function DetailActions({ event }: { event: FRKAEvent }) {
   const t = useTranslations('event.actions');
 
   const downloadIcs = () => {

@@ -1,5 +1,5 @@
 /**
- * Gotovo component exports.
+ * FRKA component exports.
  * Barrel file for clean imports.
  */
 
